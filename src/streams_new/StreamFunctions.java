@@ -29,13 +29,14 @@ public class StreamFunctions {
         System.out.println("\n3. collect() - Collect to List:");
         List<Integer> evenNumbers = numbers.stream()
                 .filter(n -> n % 2 == 0)
-                .collect(Collectors.toList());
+                .toList();
         System.out.println(evenNumbers);
         
         // 4. forEach() - performs action on each element
         System.out.println("\n4. forEach() - Print all strings:");
         strings.stream()
-                .forEach(System.out::println);
+                .forEach(str-> System.out.println(str));
+               // .forEach(System.out::println);
         
         // 5. reduce() - combines elements into a single value
         System.out.println("\n5. reduce() - Sum of all numbers:");
@@ -148,9 +149,9 @@ public class StreamFunctions {
         
         // 20. toArray() - converts stream to array
         System.out.println("\n20. toArray() - Convert to array:");
-        Integer[] arr = numbers.stream()
+        int[] arr = numbers.stream()
                 .filter(n -> n % 2 == 0)
-                .toArray(Integer[]::new);
+                .toArray(new int[]);
         System.out.println(Arrays.toString(arr));
         
         // 21. groupingBy() - groups elements by key
